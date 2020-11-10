@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mobile Image Editor</title>
+		<link rel="stylesheet" href="style.css">
+		<!--<Script type="text/javascript"  src="./foto.min.js"></script>-->
+		<Script type="text/javascript"  src="./foto.js"></script>
+		<Script>
+		var foto;
+		window.onload = function(){
+			foto = new Foto();
+		}
+		function selectImage(){
+			document.getElementById("foto-file").click();
+		}
+		function flipVertical(){
+			foto.flipVertically();
+		}
+		function flipVertical(){
+			foto.flipVertically();
+		}
+		function flipHorizontal(){
+		 foto.flipHorizontally();
+		}
+		function rotatePic(deg){
+			foto.rotate(deg);
+		}
+		function crop(){
+			foto.cropSelected();
+		}
+		function donwload(){
+			foto.export();
+		}
+		function draw(){
+			foto.drawText();
+		}
+		</Script>
+
+    </head>
+
+    <body>
+		<div class="file-upload-section" onclick="selectImage()">
+		<input Id="foto-file" type="file" accept="image/*">
+		Select Image
+		
+		</div>
+		<div class="img-container">
+		<img id="foto-image" class="image" />
+		</div>
+		<div class="buttons-section">
+		<table class="buttons-table">
+		<tr>
+		<td> <button class="operation-btn" onclick="rotatePic(90)"> Rotate 90 </button><td>
+		<td> <button class="operation-btn" onclick="rotatePic(180)"> Rotate 180 </button><td>
+		<td> <button class="operation-btn" onclick="rotatePic(270)"> Rotate 270 </button><td>
+		</tr>
+		<td> <button class="operation-btn" onclick="flipVertical()"> Flip Vertically </button><td>
+		<td> <button class="operation-btn" onclick="flipHorizontal()"> Flip Horizontally </button><td>
+		<td> <button class="operation-btn" onclick="crop()"> Crop </button><td>
+		<tr>
+		</tr>
+		<tr>
+		<td colspan="6">
+		<input type="text" id="strtxt" name="Enter Your Text"><br><br>
+		<button class="operation-btn" onclick="draw()"> Paste Text on Image </button><td>
+		</tr>
+		<tr>
+		<td colspan="6"><button class="operation-btn download-btn" onclick="donwload()"> Download </button><td>
+		</tr>
+		
+		
+    </body>
+</html>
